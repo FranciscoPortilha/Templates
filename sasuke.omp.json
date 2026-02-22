@@ -227,6 +227,22 @@
           "type": "os"
         },
         {
+          "background": "#303030",
+          "foreground": "#3C873A",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "template": " \ue266 CPU: {{ round .PhysicalPercentUsed .Precision }}% |",
+          "type": "sysinfo"
+        },
+        {
+          "background": "#303030",
+          "foreground": "#3C873A",
+          "style": "diamond",
+          "template": "RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 ",
+          "leading_diamond": "\ue0b2",
+          "type": "sysinfo"
+        },
+        {
           "background": "#f36943",
           "background_templates": [
             "{{if eq \"Charging\" .State.String}}#FFAA00{{end}}",
